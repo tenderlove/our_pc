@@ -12,14 +12,13 @@ class HelloWorldServer < OurPC::Server
   end
 end
 
-#server = TCPServer.new 2000 # Server bind to port 2000
 server = TCPServer.new 50051 # Server bind to port 2000
 
 loop do
   conn = server.accept    # Wait for a client to connect
   conn.setsockopt(Socket::IPPROTO_TCP, Socket::TCP_NODELAY, 1)
-  puts "got something"
+  puts "Got a client"
   session = HelloWorldServer.new conn
   session.run
-  puts "wat"
+  puts "finished"
 end
