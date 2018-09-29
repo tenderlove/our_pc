@@ -71,7 +71,7 @@ module OurPC
 
       def method name, encoder, decoder
         path = "/" + @service_name + "/" + name
-        @mod.define_method underscore(name) do |request, metadata: nil|
+        @mod.send :define_method, underscore(name) do |request, metadata: nil|
           send_and_receive path, encoder, decoder, request, metadata: metadata
         end
       end
