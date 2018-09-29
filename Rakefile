@@ -15,6 +15,20 @@ rule "_pb.rb" => ->(f) { source_for_proto(f) } do |t|
   sh "protoc --proto_path=examples/src --ruby_out=examples/lib #{t.source}"
 end
 
+task :deps do
+  begin
+    require 'ds9'
+    require 'google/protobuf'
+  rescue LoadError
+    Gem.install 'ds9'
+    Gem.install 'google-protobuf'
+    retry
+  end
+end
+
 task "examples/lib/helloworld_pb.rb"
 
-task :default => :test
+task :server => ["examples/lib/helloworld_pb.rb", :deps] do
+end
+
+task :default => [:deps, :test]

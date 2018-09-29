@@ -124,7 +124,7 @@ module OurPC
         if @in_flight
           raise "no implemented yet"
         else
-          compression, len, buf = x.unpack('CNa*')
+          _, len, buf = x.unpack('CNa*')
 
           if len == buf.length
             @protobuf = buf
