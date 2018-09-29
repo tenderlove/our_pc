@@ -8,7 +8,7 @@ OurPC uses nghttp2, Ruby IO objects, and Protobuf as the building blocks for imp
 
 * Core implementation is pure Ruby
 
-* Uses plain old Ruby IO objects, so server/client side timeouts can be provided to varios IO calls
+* Uses plain old Ruby IO objects, so server/client side timeouts can be provided to various IO calls
 
 * MIT licensed
 
