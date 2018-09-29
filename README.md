@@ -16,6 +16,8 @@ OurPC uses nghttp2 for H2 support, Ruby sockets for networking and IO access, an
 
 * Doesn't support streaming yet.
 
+* OurPC doesn't have many tests (it's an experiment!)
+
 ## Fun times!
 
 Try this!  In one terminal:
