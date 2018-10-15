@@ -15,9 +15,10 @@ end
 server = TCPServer.new 50051 # Server bind to port 2000
 
 loop do
-  conn = server.accept    # Wait for a client to connect
+  puts "waiting for a client..."
+  conn = server.accept
   conn.setsockopt(Socket::IPPROTO_TCP, Socket::TCP_NODELAY, 1)
-  puts "Got a client"
+  puts "got a client"
   session = HelloWorldServer.new conn
   session.run
   puts "finished"
