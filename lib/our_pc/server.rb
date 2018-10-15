@@ -37,7 +37,7 @@ module OurPC
       def method name, param_type, return_type, &block
         sig = Signature.new param_type, return_type, name, underscore(name)
         @methods[name] = sig
-        @mod.define_method sig.method_name, &block
+        @mod.send :define_method, sig.method_name, &block
       end
 
       private
