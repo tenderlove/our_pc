@@ -7,6 +7,8 @@ Rake::TestTask.new do |t|
   t.warning = true
 end
 
+Rake::Task[:test].enhance [:deps]
+
 def source_for_proto file
   "examples/src/helloworld.proto"
 end
