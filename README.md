@@ -1,3 +1,7 @@
+# Don't use this code!
+
+Actually go ahead and use this code (I don't mind). But Cookpad did a better and more full implementation [here](https://github.com/cookpad/grpc_kit).  Use their code and not mine!  This repo is just going to stay public for posterity. ☺️
+
 # OurPC
 
 OurPC is an experimental implementation of a gRPC client and server.
